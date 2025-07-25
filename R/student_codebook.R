@@ -13,3 +13,4 @@
 #' \item{subset}(Whether question was for all, Elementary, or Middle/High students)
 #' \item{type}(Variable type)
 #' }
+"student_codebook"
