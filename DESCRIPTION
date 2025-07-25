@@ -14,3 +14,4 @@ Depends:
     R (>= 3.5)
 URL: https://github.com/ztimpe/schoolhealth
 BugReports: https://github.com/ztimpe/schoolhealth/issues
+RoxygenNote: 7.3.2
