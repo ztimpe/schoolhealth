@@ -2,7 +2,7 @@
 #'
 #' The codebook to the 2024-2025 Student Health Survey
 #'
-#' @format ## student_codebook
+#' @format ## `student_codebook`
 #' A dataframe with 159 rows and 6 columns:
 #' \describe{
 #' \item{Variable}(Names of the columns in the student data)
@@ -14,3 +14,5 @@
 #' \item{type}(Variable type)
 #' }
 "student_codebook"
+
+#' @rdname student_codebook
