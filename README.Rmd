@@ -1,0 +1,66 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# schoolhealth
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of schoolhealth is to provide quick and easy access to version-controlled information pertaining to the student and school surveys, as well as document analytic approaches to using these data. More concretely, the schoolhealth package loads meta-information, such as codebooks and factor variables, that are critical to reproducible research and evaluation. 
+
+If this package proves useful moving forward, additional information will be provided as necessary.
+
+## Installation
+
+You can install the development version of schoolhealth from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("ztimpe/schoolhealth")
+```
+
+## Student Survey Codebook
+
+After installation and loading the package, call the codebook like you would any other R function:
+
+```{r example}
+library(schoolhealth)
+codebook <- student_codebook
+head(codebook)
+```
+
+## Factor Variables
+
+The student and school surveys are almost exclusively multiple choice questions. When analyzing these data in R, casting these variables as factors has a number of advantages, particularly when displaying tables of statistics because the order of the factor can be preserved and that response options receiving zero endorsements are included in output.
+
+```{r factor_example}
+factor_variables <- student_codebook_factors
+factor_variables[1]
+```
+
+Provide example of factor summary:
+```{r cars}
+summary(cars)
+```
+
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
