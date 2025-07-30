@@ -109,5 +109,7 @@ library(srvyr,warn.conflicts = FALSE)
        ids = ncessch,
        weights = finalwt,
        fpc = district_schools
-    )
+    )|>
+    group_by(Q1)|>
+    summarise(mean = round(survey_mean(),2))
 ```
