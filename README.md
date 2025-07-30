@@ -69,14 +69,16 @@ factor_variables[1]
 Provide example of factor summary:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+table(student_survey$Q30)
+#> 
+#>       No, I didn’t eat any candy yesterday at school. 
+#>                                                   634 
+#>          Yes, I ate candy 1 time yesterday at school. 
+#>                                                   201 
+#>         Yes, I ate candy 2 times yesterday at school. 
+#>                                                    61 
+#> Yes, I ate candy 3 or more times yesterday at school. 
+#>                                                    53
 ```
 
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`
