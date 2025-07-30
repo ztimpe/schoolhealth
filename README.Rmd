@@ -55,12 +55,19 @@ Provide example of factor summary:
 table(student_survey$Q30)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
+Summarize the unweighted data
+```{r}
+library(dplyr)
+student_survey |>
+   count(Q1)|>
+   na.omit()|>
+   mutate(
+          pct = paste0(round(n/sum(n,na.rm=T),2)*100,'%')
+          )
+```
+Add an example of using the weights
 
 ```{r pressure, echo = FALSE}
 plot(pressure)
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

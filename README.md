@@ -81,12 +81,32 @@ table(student_survey$Q30)
 #>                                                    53
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+Summarize the unweighted data
 
-You can also embed plots, for example:
+``` r
+library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+student_survey |>
+   count(Q1)|>
+   na.omit()|>
+   mutate(
+          pct = paste0(round(n/sum(n,na.rm=T),2)*100,'%')
+          )
+#> # A tibble: 3 × 3
+#>   Q1                       n pct  
+#>   <chr>                <int> <chr>
+#> 1 Female                 517 49%  
+#> 2 Male                   510 49%  
+#> 3 Prefer not to answer    23 2%
+```
+
+Add an example of using the weights
 
 <img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
