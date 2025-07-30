@@ -81,7 +81,7 @@ table(student_survey$Q30)
 #>                                                    53
 ```
 
-Summarize the unweighted data
+Summarize the unweighted data.
 
 ``` r
 library(dplyr,warn.conflicts = FALSE)
@@ -99,6 +99,15 @@ student_survey |>
 #> 3 Prefer not to answer    23 2%
 ```
 
-Add an example of using the weights
+We recommend using the srvyr package for analyses with weighted data.
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+``` r
+library(srvyr,warn.conflicts = FALSE)
+ student_survey |>
+    select(ncessch:race)|>
+    as_survey_design(
+       ids = ncessch,
+       weights = finalwt,
+       fpc = district_schools
+    )
+```

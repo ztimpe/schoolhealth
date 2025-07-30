@@ -55,7 +55,7 @@ Provide example of factor summary:
 table(student_survey$Q30)
 ```
 
-Summarize the unweighted data
+Summarize the unweighted data.
 ```{r}
 library(dplyr,warn.conflicts = FALSE)
 student_survey |>
@@ -65,9 +65,17 @@ student_survey |>
           pct = paste0(round(n/sum(n,na.rm=T),2)*100,'%')
           )
 ```
-Add an example of using the weights
 
-```{r pressure, echo = FALSE}
-plot(pressure)
+We recommend using the srvyr package for analyses with weighted data. 
+
+```{r, eval = FALSE}
+library(srvyr,warn.conflicts = FALSE)
+ student_survey |>
+    select(ncessch:race)|>
+    as_survey_design(
+       ids = ncessch,
+       weights = finalwt,
+       fpc = district_schools
+    )
 ```
 
