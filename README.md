@@ -112,4 +112,11 @@ library(srvyr,warn.conflicts = FALSE)
     )|>
     group_by(Q1)|>
     summarise(mean = round(survey_mean(),2))
+#> # A tibble: 4 × 3
+#>   Q1                    mean mean_se
+#>   <chr>                <dbl>   <dbl>
+#> 1 Female                0.47    0.01
+#> 2 Male                  0.5     0.01
+#> 3 Prefer not to answer  0.02    0   
+#> 4 <NA>                  0       0
 ```

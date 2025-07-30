@@ -68,7 +68,7 @@ student_survey |>
 
 We recommend using the srvyr package for analyses with weighted data. 
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 library(srvyr,warn.conflicts = FALSE)
  student_survey |>
     select(ncessch:race)|>
