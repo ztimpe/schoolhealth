@@ -77,7 +77,9 @@ library(srvyr,warn.conflicts = FALSE)
        weights = finalwt,
        fpc = district_schools
     )|>
+    select(Q1)|>
+    na.omit()|>
     group_by(Q1)|>
-    summarise(mean = round(survey_mean(),2))
+    summarise(mean = round(survey_mean(),3))
 ```
 
