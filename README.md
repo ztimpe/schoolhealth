@@ -84,15 +84,7 @@ table(student_survey$Q30)
 Summarize the unweighted data
 
 ``` r
-library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
+library(dplyr,warn.conflicts = FALSE)
 student_survey |>
    count(Q1)|>
    na.omit()|>
