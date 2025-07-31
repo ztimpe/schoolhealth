@@ -56,11 +56,17 @@ head(codebook)
 The student and school surveys are almost exclusively multiple choice
 questions. When analyzing these data in R, casting these variables as
 factors has a number of advantages, particularly when displaying tables
-of statistics because the order of the factor can be preserved and that
-response options receiving zero endorsements are included in output.
+of statistics because the order of the factor can be preserved and
+response options receiving zero endorsements are included in output. You
+can access individual elements either by name or index.
 
 ``` r
 factor_variables <- student_codebook_factors
+# use "Q1"
+factor_variables['Q1']
+#> $Q1
+#> [1] "Male"                 "Female"               "Prefer not to answer"
+# or index position
 factor_variables[1]
 #> $Q1
 #> [1] "Male"                 "Female"               "Prefer not to answer"
@@ -69,16 +75,10 @@ factor_variables[1]
 Provide example of factor summary:
 
 ``` r
-table(student_survey$Q30)
+table(student_survey$Q1)
 #> 
-#>       No, I didn’t eat any candy yesterday at school. 
-#>                                                   634 
-#>          Yes, I ate candy 1 time yesterday at school. 
-#>                                                   201 
-#>         Yes, I ate candy 2 times yesterday at school. 
-#>                                                    61 
-#> Yes, I ate candy 3 or more times yesterday at school. 
-#>                                                    53
+#>               Female                 Male Prefer not to answer 
+#>                  517                  510                   23
 ```
 
 Summarize the unweighted data.
